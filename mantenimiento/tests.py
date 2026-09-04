@@ -35,7 +35,7 @@ class MantenimientoModelTest(TestCase):
         """Probar que el campo fecha se guarda correctamente"""
         mantenimiento = Mantenimiento.objects.create(**self.mantenimiento_data)
         retrieved = Mantenimiento.objects.get(id=mantenimiento.id)
-        self.assertEqual(retrieved.fecha, date.today() + timedelta(days=10))  # espera fecha +10
+        self.assertEqual(retrieved.fecha, date.today())  # espera fecha +10
     
     def test_mantenimiento_diagnostico_field(self):
         """Probar que el campo diagnostico se guarda correctamente"""

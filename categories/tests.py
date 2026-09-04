@@ -58,7 +58,7 @@ class CategorySerializerTest(TestCase):
     def test_serialize_category(self):
         """Probar serialización de categoría"""
         serializer = CategorySerializer(self.category)
-        self.assertEqual(serializer.data['tittle'], 'Wrong Category')  # Test- Category
+        self.assertEqual(serializer.data['tittle'], 'Test Category')  # Test- Category
         self.assertEqual(serializer.data['image'], 'test_image.jpg')
         self.assertIn('id', serializer.data)
     

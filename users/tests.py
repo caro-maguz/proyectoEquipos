@@ -22,7 +22,7 @@ class UserModelTest(TestCase):
     def test_create_user(self):
         """Probar creación de un usuario"""
         user = User.objects.create_user(**self.user_data)
-        self.assertEqual(user.username, 'wrongusername')  # testuser
+        self.assertEqual(user.username, 'testuser')
         self.assertEqual(user.email, self.user_data['email'])
         self.assertTrue(user.check_password(self.user_data['password']))
     
@@ -49,7 +49,7 @@ class UserModelTest(TestCase):
     def test_user_default_values(self):
         """Probar valores por defecto del usuario"""
         user = User.objects.create_user(**self.user_data)
-        self.assertFalse(user.is_active)  # True
+        self.assertTrue(user.is_active)  # True
         self.assertFalse(user.is_staff)
         self.assertFalse(user.is_superuser)
 
